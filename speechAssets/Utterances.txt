@@ -1,0 +1,23 @@
+ListFeaturesIntent list
+ListFeaturesIntent give me a list
+ListFeaturesIntent features
+ListFeaturesIntent list features
+ListFeaturesIntent list the features
+ListFeaturesIntent list your features
+ListFeaturesIntent what features
+ListFeaturesIntent what features can you help me with
+ListFeaturesIntent which features
+ListFeaturesIntent which features can you help me with
+FeatureCommunicationsIntent How do I contact my constituents in the media
+FeatureCommunicationsIntent How do I email my supporters in the media
+FeatureCommunicationsIntent How do I send communication to my constituents in the media
+FeatureCommunicationsIntent communications
+FeatureCommunicationsIntent help with communications
+FeatureCommunicationsIntent help me with communications
+FeatureCommunicationsIntent i need help with communications
+FeatureSegmentationIntent segmentation
+FeatureSegmentationIntent help with segmentation
+FeatureSegmentationIntent help me with segmentation
+FeatureSegmentationIntent i need help with segmentation
+FeatureSegmentationIntent How do I find my constituents in the media
+FeatureSegmentationIntent How do I create a group of my constituents in the media
