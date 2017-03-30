@@ -264,7 +264,7 @@ const languageStrings = {
             "HELP_MESSAGE_COMMUNICATIONS_MENU": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
             "SEGMENTATION_MENU_PREFIX": "Looks like you want to segment your constituents into a group.  Let's get started. ",
-            "SEGMENTATION_MENU": "In order to segment your constituents, you need to be logged in to Luminate Beta.  Are you logged in to Luminate Beta? ",
+            "SEGMENTATION_MENU": "To segment your constituents, you need to be logged in to Luminate Beta.  Are you logged in to Luminate Beta? ",
             "SEGMENTATION_MENU_REPROMPT": "Say yes if you are logged into Luminate Beta, say no if you are not yet logged into Luminate Beta, or say help me. ",
             "HELP_MESSAGE_SEGMENTATION_MENU": "Say yes if you are logged into Luminate Beta, say no if you are not yet logged into Luminate Beta.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
