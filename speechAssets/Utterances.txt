@@ -1,16 +1,17 @@
-ListFeaturesIntent list
-ListFeaturesIntent give me a list
-ListFeaturesIntent features
-ListFeaturesIntent list features
-ListFeaturesIntent list the features
-ListFeaturesIntent list your features
-ListFeaturesIntent what features
-ListFeaturesIntent what features can you help me with
-ListFeaturesIntent which features
-ListFeaturesIntent which features can you help me with
-FeatureCommunicationsIntent How do I contact my constituents in the media
-FeatureCommunicationsIntent How do I email my supporters in the media
-FeatureCommunicationsIntent How do I send communication to my constituents in the media
+ListIntent list
+ListIntent lists
+ListIntent give me a list
+ListIntent features
+ListIntent list features
+ListIntent list the features
+ListIntent list your features
+ListIntent what features
+ListIntent what features can you help me with
+ListIntent which features
+ListIntent which features can you help me with
+FeatureCommunicationsIntent how do I contact my constituents in the media
+FeatureCommunicationsIntent how do I email my supporters in the media
+FeatureCommunicationsIntent how do I send communication to my constituents in the media
 FeatureCommunicationsIntent communications
 FeatureCommunicationsIntent help with communications
 FeatureCommunicationsIntent help me with communications
@@ -19,5 +20,18 @@ FeatureSegmentationIntent segmentation
 FeatureSegmentationIntent help with segmentation
 FeatureSegmentationIntent help me with segmentation
 FeatureSegmentationIntent i need help with segmentation
-FeatureSegmentationIntent How do I find my constituents in the media
-FeatureSegmentationIntent How do I create a group of my constituents in the media
+FeatureSegmentationIntent how do I find my constituents in the media
+FeatureSegmentationIntent how do I create a group of my constituents in the media
+WhatsNewIntent whats new
+WhatsNewIntent what is new
+WhatsNewIntent whats new in luminate beta
+WhatsNewIntent what is new in luminate beta
+WhatsNewIntent whats new in luminate
+WhatsNewIntent what is new in luminate
+FeatureDashboardIntent dashboards
+FeatureDashboardIntent saving dashboards
+FeatureDashboardIntent printing dashboards
+FeatureDashboardIntent saving and printing dashboards
+FeatureDashboardIntent printing and saving dashboards
+FeatureAuthenticationIntent authentication
+FeatureAuthenticationIntent blackbaud authentication

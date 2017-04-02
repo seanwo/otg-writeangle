@@ -12,6 +12,7 @@ exports.handler = function (event, context, callback) {
         mainMenuHandlers,
         communicationsMenuHandlers,
         segmentationMenuHandlers,
+        newFeaturesMenuHandlers,
         actionWalkThruMenuHandlers
     );
     alexa.execute();
@@ -21,6 +22,7 @@ const states = {
     MAINMENU: '_MAINMENU',
     COMMUNICATIONSMENU: "_COMMUNICATIONSMENU",
     SEGMENTATIONMENU: "_SEGMENATIONMENU",
+    NEWFEATURESMENU: "_NEWFEAUTRESMENU",
     ACTIONWALKTHRUMENU: "_ACTIONWALKTHRUMENU"
 };
 
@@ -46,10 +48,14 @@ var mainMenuHandlers = Alexa.CreateStateHandler(states.MAINMENU, {
         this.attributes["reprompt"] = repromptSpeech;
         this.emit(':ask', speechOutput, repromptSpeech);
     },
-    'ListFeaturesIntent': function () {
+    'ListIntent': function () {
         var speechOutput = this.t("FEATURE_LIST") + this.t("MAIN_MENU");
         var repromptSpeech = this.t("MAIN_MENU_REPROMPT");
         this.emit(':ask', speechOutput, repromptSpeech);
+    },
+    'WhatsNewIntent': function () {
+        this.handler.state = states.NEWFEATURESMENU;
+        this.emitWithState('NewFeaturesMenu', this.t("NEWFEATURES_MENU_PREFIX"));
     },
     'FeatureCommunicationsIntent': function () {
         this.handler.state = states.COMMUNICATIONSMENU;
@@ -89,16 +95,71 @@ var mainMenuHandlers = Alexa.CreateStateHandler(states.MAINMENU, {
     }
 });
 
+var newFeaturesMenuHandlers = Alexa.CreateStateHandler(states.NEWFEATURESMENU, {
+    'NewFeaturesMenu': function (prefix) {
+        var speechOutput = (prefix || "") + this.t("NEWFEATURES_MENU");
+        var repromptSpeech = this.t("NEWFEATURES_MENU_REPROMPT");
+        this.attributes["reprompt"] = repromptSpeech;
+        this.emit(':ask', speechOutput, repromptSpeech);
+    },
+    'ListIntent': function () {
+        this.handler.state = states.NEWFEATURESMENU;
+        this.emitWithState('NewFeaturesMenu', this.t("NEWFEATURE_LIST_EXPLAIN"));
+    },
+    'FeatureDashboardIntent': function () {
+        this.handler.state = states.NEWFEATURESMENU;
+        this.emitWithState('NewFeaturesMenu', this.t("NEWFEATURE_DASHBOARDS_EXPLAIN"));
+    },
+    'FeatureAuthenticationIntent': function () {
+        this.handler.state = states.NEWFEATURESMENU;
+        this.emitWithState('NewFeaturesMenu', this.t("NEWFEATURE_AUTHENTICATION_EXPLAIN"));
+    },
+    'AMAZON.RepeatIntent': function () {
+        this.handler.state = states.NEWFEATURESMENU;
+        this.emitWithState('NewFeaturesMenu');
+    },
+    'AMAZON.CancelIntent': function () {
+        var speechOutput = this.t("STOP_MESSAGE");
+        this.emit(':tell', speechOutput);
+    },
+    'AMAZON.StopIntent': function () {
+        var speechOutput = this.t("STOP_MESSAGE");
+        this.emit(':tell', speechOutput);
+    },
+    'AMAZON.StartOverIntent': function () {
+        this.handler.state = states.MAINMENU;
+        this.emitWithState('MainMenu');
+    },
+    'AMAZON.HelpIntent': function () {
+        var speechOutput = this.t("HELP_MESSAGE_NEWFEATURES_MENU", this.t("HOW_CAN_I_HELP"));
+        this.emit(':ask', speechOutput, speechOutput);
+    },
+    'Unhandled': function () {
+        var speechOutput = this.t("NO_UNDERSTAND") + this.attributes["reprompt"];
+        var repromptSpeech = this.t("HELP_ME");
+        this.emit(':ask', speechOutput, repromptSpeech);
+    },
+    'SessionEndedRequest': function () {
+        console.log('NEWFEATURESMENU.SessionEndedRequest');
+    }
+});
+
 var communicationsMenuHandlers = Alexa.CreateStateHandler(states.COMMUNICATIONSMENU, {
     'CommunicationsMenu': function (prefix) {
+        this.attributes['session'].actionState = states.COMMUNICATIONSMENU;
+        this.attributes['session'].actionMenu = 'CommunicationsMenu';
         var speechOutput = (prefix || "") + this.t("COMMUNICATIONS_MENU");
         var repromptSpeech = this.t("COMMUNICATIONS_MENU_REPROMPT");
         this.attributes["reprompt"] = repromptSpeech;
         this.emit(':ask', speechOutput, repromptSpeech);
     },
     'AMAZON.YesIntent': function () {
-        var speechOutput = this.t("NOTIMPL");
-        this.emit(':tell', speechOutput);
+        this.attributes['session'].exitState = states.MAINMENU;
+        this.attributes['session'].exitMenu = 'MainMenu';
+        this.attributes['session'].action = 'CONTACT_GROUP';
+        this.attributes['session'].walkthru = this.t("COMMUNICATIONS_WALKTHRU");
+        this.handler.state = states.ACTIONWALKTHRUMENU;
+        this.emitWithState('ActionWalkThruMenu');
     },
     'AMAZON.NoIntent': function () {
         this.attributes['session'].exitState = states.COMMUNICATIONSMENU;
@@ -168,8 +229,8 @@ var segmentationMenuHandlers = Alexa.CreateStateHandler(states.SEGMENTATIONMENU,
         this.emit(':tell', speechOutput);
     },
     'AMAZON.StartOverIntent': function () {
-        this.handler.state = this.attributes['session'].productState;
-        this.emitWithState(this.attributes['session'].productMenu);
+        this.handler.state = states.MAINMENU;
+        this.emitWithState('MainMenu');
     },
     'AMAZON.HelpIntent': function () {
         var speechOutput = this.t("HELP_MESSAGE_SEGMENTATION_MENU", this.t("HOW_CAN_I_HELP"));
@@ -254,9 +315,18 @@ const languageStrings = {
             "STOP_MESSAGE": "Goodbye! ",
             "NO_UNDERSTAND": "Sorry, I don't quite understand what you mean. ",
             "MAIN_MENU": "Ask me a question.  I am here to help! ",
-            "MAIN_MENU_REPROMPT": "Ask me a question, say features, or just say help me. ",
-            "HELP_MESSAGE_MAIN_MENU": "Ask me a question on what you need help with. Say features to hear a list of features. Say repeat to hear the commands again or you can say exit...Now, %s",
+            "MAIN_MENU_REPROMPT": "Ask me a question, say features, say what's new, or just say help me. ",
+            "HELP_MESSAGE_MAIN_MENU": "Ask me a question on what you need help with. Say features to hear a list of features.  Say what's new to hear a list of new features.  Say repeat to hear the commands again or you can say exit...Now, %s",
             "FEATURE_LIST": "I can help you with communications or segmentation. ",
+
+            "NEWFEATURES_MENU_PREFIX": "Looks like you are interested in hearing about new features.  Great! ",
+            "NEWFEATURES_MENU": "I can tell you about lists, saving and printing dashboards, and blackbaud authentication.  Which feature are you interested in hearing about? ",
+            "NEWFEATURES_MENU_REPROMPT": "Say the name of the feature you want to hear about, or say help me. ",
+            "HELP_MESSAGE_NEWFEATURES_MENU": "Say lists if you want to hear about lists, say dashboards if you want to hear about dashboards, say authentication if you want to hear about authentication.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
+
+            "NEWFEATURE_LIST_EXPLAIN": "This is the description of the new feature called lists. ",
+            "NEWFEATURE_DASHBOARDS_EXPLAIN": "This is the description of the new feature called dashboards. ",
+            "NEWFEATURE_AUTHENTICATION_EXPLAIN": "This is the description of the new feature called blackbaud authentication. ",
 
             "COMMUNICATIONS_MENU_PREFIX": "Looks like you want to contact your constituents.  Let's get started. ",
             "COMMUNICATIONS_MENU": "You need to make a list of your constituents before you contact them.  Have you already created a group of constituents to contact?",
@@ -277,6 +347,17 @@ const languageStrings = {
                 "Select the tags for the types of constituents you want in this segment. ",
                 "Type a name and description for your list and then click save. ",
                 "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the Groups list within Luminate Online when the information transfers. "
+            ],
+
+            "CONTACT_GROUP": "Contact a group of constituents",
+
+            "COMMUNICATIONS_WALKTHRU": [
+                "Choose constituent 360 from the main menu. ",
+                "Select groups. ",
+                "Find the list of segmented constituents. ",
+                "Select email. ",
+                "Select email campaigns. ",
+                "Cleanup this confusing walkthrough with real steps. "
             ],
 
             "ACTION_WALKTHRU_MENU": "Let's walk through how to %s, say next after each step.  Let's begin. ",
