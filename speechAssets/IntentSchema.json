@@ -1,47 +1,27 @@
 {
     "intents": [
         {
+            "intent": "WhatsNewIntent",
+            "slots": []
+        },
+        {
             "intent": "ListIntent",
             "slots": []
         },
         {
-            "intent": "ListProductsIntent",
+            "intent": "FeatureCommunicationsIntent",
             "slots": []
         },
         {
-            "intent": "ListFeaturesIntent",
+            "intent": "FeatureSegmentationIntent",
             "slots": []
         },
         {
-            "intent": "ProductFooIntent",
+            "intent": "FeatureDashboardIntent",
             "slots": []
         },
         {
-            "intent": "ProductBarIntent",
-            "slots": []
-        },
-        {
-            "intent": "FeatureAlphaIntent",
-            "slots": []
-        },
-        {
-            "intent": "FeatureBetaIntent",
-            "slots": []
-        },
-        {
-            "intent": "FeatureCharlieIntent",
-            "slots": []
-        },
-        {
-            "intent": "AddAnAlphaIntent",
-            "slots": []
-        },
-        {
-            "intent": "EditAnAlphaIntent",
-            "slots": []
-        },
-        {
-            "intent": "DeleteAnAlphaIntent",
+            "intent": "FeatureAuthenticationIntent",
             "slots": []
         },
         {
