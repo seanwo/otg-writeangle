@@ -317,7 +317,7 @@ const languageStrings = {
             "MAIN_MENU": "Ask me a question.  I am here to help! ",
             "MAIN_MENU_REPROMPT": "Ask me a question, say features, say what's new, or just say help me. ",
             "HELP_MESSAGE_MAIN_MENU": "Ask me a question on what you need help with. Say features to hear a list of features.  Say what's new to hear a list of new features.  Say repeat to hear the commands again or you can say exit...Now, %s",
-            "FEATURE_LIST": "I can help you with new features or lists. ",
+            "FEATURE_LIST": "I can help you with communications or lists. ",
 
             "NEWFEATURES_MENU_PREFIX": "Looks like you are interested in hearing about new features.  Great! ",
             "NEWFEATURES_MENU": "I can tell you about lists, saving and printing dashboards, and blackbaud authentication.  Which feature are you interested in hearing about? ",
@@ -346,19 +346,19 @@ const languageStrings = {
                 "Type a name and description for your list and then click save. ",
                 "Click the filters button that looks like a funnel and then choose email and social. ",
                 "Select the tags for the types of constituents you want in this segment. ",
-                "Click apply filters to apply the selections you've made.",
+                "Click apply filters to apply the selections you've made. ",
                 "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the User Groups list within Groups in Luminate Online when the data transfers. "
             ],
 
             "CONTACT_GROUP": "Contact a group of constituents",
 
             "COMMUNICATIONS_WALKTHRU": [
+                "Log into Luminate Online.",
                 "Choose constituent 360 from the main menu. ",
                 "Select groups. ",
-                "Find the list of segmented constituents. ",
-                "Select email. ",
-                "Select email campaigns. ",
-                "Cleanup this confusing walkthrough with real steps. "
+                "You should be on the User Group List tab. ",
+                "Find the list of segmented constituents by searching on the name of the list. ",
+                "Click View Members to see the constituents in the group. ",
             ],
 
             "ACTION_WALKTHRU_MENU": "Let's walk through how to %s, say next after each step.  Let's begin. ",
