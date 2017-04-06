@@ -26,8 +26,8 @@ FeatureSegmentationIntent how do I find my constituents
 FeatureSegmentationIntent how do I find my constituents in social media
 FeatureSegmentationIntent how do I find my social media influencers
 FeatureSegmentationIntent how do I create a group of my constituents that are social media influencers
-FeatureSegmentationIntent help me with lists
-FeatureSegmentationIntent help with lists
+FeatureSegmentationIntent how do I make a list
+FeatureSegmentationIntent how do I create a list
 FeatureSegmentationIntent i need help with lists
 WhatsNewIntent whats new
 WhatsNewIntent what is new

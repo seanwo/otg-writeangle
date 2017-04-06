@@ -386,7 +386,7 @@ const languageStrings = {
             "ACTION_WALKTHRU_MENU": "Let's walk through how to %s, say next after each step.  Let's begin. ",
             "ACTION_WALKTHRU_MENU_REPROMPT": "Say next for the next step.  Say repeat to hear the step again.  ",
             "HELP_MESSAGE_ACTION_WALKTHRU_MENU": "To hear the next step, say next.  To hear the step again, say repeat.  Say start over to choose a new action or you can say exit...Now, %s",
-            "WALKTHRU_COMPLETE": "Walk through complete! ",
+            "WALKTHRU_COMPLETE": "You did it!  Good job! ",
 
             "UNEXPECTED": "An unexpected error has occurred. Please try again later! ",
             "NOTIMPL": "This code path is not yet implemented. "
