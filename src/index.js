@@ -317,7 +317,7 @@ const languageStrings = {
             "MAIN_MENU": "Ask me a question.  I am here to help! ",
             "MAIN_MENU_REPROMPT": "Ask me a question, say features, say what's new, or just say help me. ",
             "HELP_MESSAGE_MAIN_MENU": "Ask me a question on what you need help with. Say features to hear a list of features.  Say what's new to hear a list of new features.  Say repeat to hear the commands again or you can say exit...Now, %s",
-            "FEATURE_LIST": "I can help you with communications or segmentation. ",
+            "FEATURE_LIST": "I can help you with new features or lists. ",
 
             "NEWFEATURES_MENU_PREFIX": "Looks like you are interested in hearing about new features.  Great! ",
             "NEWFEATURES_MENU": "I can tell you about lists, saving and printing dashboards, and blackbaud authentication.  Which feature are you interested in hearing about? ",
@@ -334,19 +334,20 @@ const languageStrings = {
             "HELP_MESSAGE_COMMUNICATIONS_MENU": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
             "SEGMENTATION_MENU_PREFIX": "Looks like you want to segment your constituents into a group.  Let's get started. ",
-            "SEGMENTATION_MENU": "To segment your constituents, you need to be logged in to Luminate Beta.  Are you logged in to Luminate Beta? ",
+            "SEGMENTATION_MENU": "To segment your constituents, you need to be logged into Luminate Beta.  Are you logged into Luminate Beta? ",
             "SEGMENTATION_MENU_REPROMPT": "Say yes if you are logged into Luminate Beta, say no if you are not yet logged into Luminate Beta, or say help me. ",
             "HELP_MESSAGE_SEGMENTATION_MENU": "Say yes if you are logged into Luminate Beta, say no if you are not yet logged into Luminate Beta.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
-            "CREATE_SEGMENT": "Create a segment in Luminate Beta",
+            "CREATE_SEGMENT": "Create a list in Luminate Beta",
 
             "SEGMENTATION_WALKTHRU": [
-                "Choose segmentation from the main menu. ",
-                "Click on the plus sign in the new box to create a new list. ",
-                "Select filters and then choose social. ",
-                "Select the tags for the types of constituents you want in this segment. ",
+                "Choose lists from the main menu. ",
+                "Click on the plus sign to create a new list. ",
                 "Type a name and description for your list and then click save. ",
-                "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the Groups list within Luminate Online when the information transfers. "
+                "Click the filters button that looks like a funnel and then choose email and social. ",
+                "Select the tags for the types of constituents you want in this segment. ",
+                "Click apply filters to apply the selections you've made.",
+                "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the User Groups list within Groups in Luminate Online when the data transfers. "
             ],
 
             "CONTACT_GROUP": "Contact a group of constituents",
