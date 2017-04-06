@@ -1,6 +1,10 @@
 {
     "intents": [
         {
+            "intent": "WinnerIntent",
+            "slots": []
+        },
+        {
             "intent": "WhatsNewIntent",
             "slots": []
         },
