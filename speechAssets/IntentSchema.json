@@ -17,10 +17,6 @@
             "slots": []
         },
         {
-            "intent": "FeatureCommunicationsIntent",
-            "slots": []
-        },
-        {
             "intent": "FeatureSegmentationIntent",
             "slots": []
         },

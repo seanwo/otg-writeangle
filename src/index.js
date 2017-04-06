@@ -10,7 +10,6 @@ exports.handler = function (event, context, callback) {
     alexa.registerHandlers(
         entryPointHandlers,
         mainMenuHandlers,
-        communicationsMenuHandlers,
         segmentationMenuHandlers,
         newFeaturesMenuHandlers,
         actionWalkThruMenuHandlers
@@ -20,7 +19,6 @@ exports.handler = function (event, context, callback) {
 
 const states = {
     MAINMENU: '_MAINMENU',
-    COMMUNICATIONSMENU: "_COMMUNICATIONSMENU",
     SEGMENTATIONMENU: "_SEGMENATIONMENU",
     NEWFEATURESMENU: "_NEWFEAUTRESMENU",
     ACTIONWALKTHRUMENU: "_ACTIONWALKTHRUMENU"
@@ -60,10 +58,6 @@ var mainMenuHandlers = Alexa.CreateStateHandler(states.MAINMENU, {
     'WhatsNewIntent': function () {
         this.handler.state = states.NEWFEATURESMENU;
         this.emitWithState('NewFeaturesMenu', this.t("NEWFEATURES_MENU_PREFIX"));
-    },
-    'FeatureCommunicationsIntent': function () {
-        this.handler.state = states.COMMUNICATIONSMENU;
-        this.emitWithState('CommunicationsMenu', this.t("COMMUNICATIONS_MENU_PREFIX"));
     },
     'ListIntent': function () {
         this.handler.state = states.SEGMENTATIONMENU;
@@ -153,63 +147,6 @@ var newFeaturesMenuHandlers = Alexa.CreateStateHandler(states.NEWFEATURESMENU, {
     },
     'SessionEndedRequest': function () {
         console.log('NEWFEATURESMENU.SessionEndedRequest');
-    }
-});
-
-var communicationsMenuHandlers = Alexa.CreateStateHandler(states.COMMUNICATIONSMENU, {
-    'CommunicationsMenu': function (prefix) {
-        this.attributes['session'].actionState = states.COMMUNICATIONSMENU;
-        this.attributes['session'].actionMenu = 'CommunicationsMenu';
-        var speechOutput = (prefix || "") + this.t("COMMUNICATIONS_MENU");
-        var repromptSpeech = this.t("COMMUNICATIONS_MENU_REPROMPT");
-        this.attributes["reprompt"] = repromptSpeech;
-        this.emit(':ask', speechOutput, repromptSpeech);
-    },
-    'WinnerIntent': function () {
-        var speechOutput = this.t("WINNER");
-        this.emit(':tell', speechOutput);
-    },
-    'AMAZON.YesIntent': function () {
-        this.attributes['session'].exitState = states.MAINMENU;
-        this.attributes['session'].exitMenu = 'MainMenu';
-        this.attributes['session'].action = 'CONTACT_GROUP';
-        this.attributes['session'].walkthru = this.t("COMMUNICATIONS_WALKTHRU");
-        this.handler.state = states.ACTIONWALKTHRUMENU;
-        this.emitWithState('ActionWalkThruMenu');
-    },
-    'AMAZON.NoIntent': function () {
-        this.attributes['session'].exitState = states.COMMUNICATIONSMENU;
-        this.attributes['session'].exitMenu = 'CommunicationsMenu';
-        this.handler.state = states.SEGMENTATIONMENU;
-        this.emitWithState('SegmentationMenu', this.t("SEGMENTATION_MENU_PREFIX"));
-    },
-    'AMAZON.RepeatIntent': function () {
-        this.handler.state = states.COMMUNICATIONSMENU;
-        this.emitWithState('CommunicationsMenu');
-    },
-    'AMAZON.CancelIntent': function () {
-        var speechOutput = this.t("STOP_MESSAGE");
-        this.emit(':tell', speechOutput);
-    },
-    'AMAZON.StopIntent': function () {
-        var speechOutput = this.t("STOP_MESSAGE");
-        this.emit(':tell', speechOutput);
-    },
-    'AMAZON.StartOverIntent': function () {
-        this.handler.state = states.MAINMENU;
-        this.emitWithState('MainMenu');
-    },
-    'AMAZON.HelpIntent': function () {
-        var speechOutput = this.t("HELP_MESSAGE_COMMUNICATIONS_MENU", this.t("HOW_CAN_I_HELP"));
-        this.emit(':ask', speechOutput, speechOutput);
-    },
-    'Unhandled': function () {
-        var speechOutput = this.t("NO_UNDERSTAND") + this.attributes["reprompt"];
-        var repromptSpeech = this.t("HELP_ME");
-        this.emit(':ask', speechOutput, repromptSpeech);
-    },
-    'SessionEndedRequest': function () {
-        console.log('COMMUNICATIONSMENU.SessionEndedRequest');
     }
 });
 
@@ -337,7 +274,7 @@ const languageStrings = {
             "MAIN_MENU": "Ask me a question.  I am here to help! ",
             "MAIN_MENU_REPROMPT": "Ask me a question, say features, say what's new, or just say help me. ",
             "HELP_MESSAGE_MAIN_MENU": "Ask me a question on what you need help with. Say features to hear a list of features.  Say what's new to hear a list of new features.  Say repeat to hear the commands again or you can say exit...Now, %s",
-            "FEATURE_LIST": "I can help you with communications or lists. ",
+            "FEATURE_LIST": "I can help you with lists. ",
 
             "WINNER": "Team Illuminate Me of course!",
 
@@ -349,11 +286,6 @@ const languageStrings = {
             "NEWFEATURE_LIST_EXPLAIN": "You're gonna love Lists! Check this out. Now you can apply filters to your constituents to focus on a specific audience. ",
             "NEWFEATURE_DASHBOARDS_EXPLAIN": "Dashboards are fantastic! They display data in really pretty graphs, so you can check the success of your programs and compare historical data and current data. ",
             "NEWFEATURE_AUTHENTICATION_EXPLAIN": "Get ready for convenience! Now you can log into Luminate Beta using the same login you already use for Blackbaud Community and Blackbaud University. ",
-
-            "COMMUNICATIONS_MENU_PREFIX": "Sounds like you want to contact your constituents.  Let's get started. ",
-            "COMMUNICATIONS_MENU": "You need to make a list of your constituents before you contact them.  Have you already created a group?",
-            "COMMUNICATIONS_MENU_REPROMPT": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents, or say help me. ",
-            "HELP_MESSAGE_COMMUNICATIONS_MENU": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
             "SEGMENTATION_MENU_PREFIX": "Sounds like you want to create a list of constituents.  Let's get started. ",
             "SEGMENTATION_MENU": "To create your list you need to be logged into Luminate Beta.  Are you logged into Luminate Beta? ",
@@ -370,17 +302,6 @@ const languageStrings = {
                 "Select the criteria for the types of constituents you want in this list. ",
                 "Click apply filters to apply the selections you've made. ",
                 "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the User Groups  within Groups in Luminate Online when the data transfers. "
-            ],
-
-            "CONTACT_GROUP": "Find the list in Luminate Online",
-
-            "COMMUNICATIONS_WALKTHRU": [
-                "Log into Luminate Online.",
-                "Choose constituent 360 from the main menu. ",
-                "Select groups. ",
-                "You should be on the User Group List tab. ",
-                "Search for the name of the list you created in Luminate Beta. ",
-                "Click View Members to see the constituents in the group. "
             ],
 
             "ACTION_WALKTHRU_MENU": "Let's walk through how to %s, say next after each step.  Let's begin. ",

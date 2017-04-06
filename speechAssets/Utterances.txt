@@ -8,15 +8,6 @@ FeatureIntent which features
 FeatureIntent which features can you help me with
 ListIntent lists
 ListIntent list
-FeatureCommunicationsIntent how do I contact my constituents
-FeatureCommunicationsIntent how do I contact my constituents in social media
-FeatureCommunicationsIntent how do I contact my supporters in social media
-FeatureCommunicationsIntent how do I find my constituents that are social media influencers
-FeatureCommunicationsIntent how do I find my social media influencers
-FeatureCommunicationsIntent communications
-FeatureCommunicationsIntent help with communications
-FeatureCommunicationsIntent help me with communications
-FeatureCommunicationsIntent i need help with communications
 FeatureSegmentationIntent segmentation
 FeatureSegmentationIntent help with lists
 FeatureSegmentationIntent help with segmentation
