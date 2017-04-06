@@ -48,6 +48,10 @@ var mainMenuHandlers = Alexa.CreateStateHandler(states.MAINMENU, {
         this.attributes["reprompt"] = repromptSpeech;
         this.emit(':ask', speechOutput, repromptSpeech);
     },
+    'WinnerIntent': function() {
+        var speechOutput = this.t("WINNER");
+        this.emit(':tell', speechOutput);
+    },
     'FeatureIntent': function () {
         var speechOutput = this.t("FEATURE_LIST") + this.t("MAIN_MENU");
         var repromptSpeech = this.t("MAIN_MENU_REPROMPT");
@@ -106,6 +110,10 @@ var newFeaturesMenuHandlers = Alexa.CreateStateHandler(states.NEWFEATURESMENU, {
         this.attributes["reprompt"] = repromptSpeech;
         this.emit(':ask', speechOutput, repromptSpeech);
     },
+    'WinnerIntent': function() {
+        var speechOutput = this.t("WINNER");
+        this.emit(':tell', speechOutput);
+    },    
     'ListIntent': function () {
         this.handler.state = states.NEWFEATURESMENU;
         this.emitWithState('NewFeaturesMenu', this.t("NEWFEATURE_LIST_EXPLAIN"));
@@ -157,6 +165,10 @@ var communicationsMenuHandlers = Alexa.CreateStateHandler(states.COMMUNICATIONSM
         this.attributes["reprompt"] = repromptSpeech;
         this.emit(':ask', speechOutput, repromptSpeech);
     },
+    'WinnerIntent': function() {
+        var speechOutput = this.t("WINNER");
+        this.emit(':tell', speechOutput);
+    },    
     'AMAZON.YesIntent': function () {
         this.attributes['session'].exitState = states.MAINMENU;
         this.attributes['session'].exitMenu = 'MainMenu';
@@ -210,6 +222,10 @@ var segmentationMenuHandlers = Alexa.CreateStateHandler(states.SEGMENTATIONMENU,
         this.attributes["reprompt"] = repromptSpeech;
         this.emit(':ask', speechOutput, repromptSpeech);
     },
+    'WinnerIntent': function() {
+        var speechOutput = this.t("WINNER");
+        this.emit(':tell', speechOutput);
+    },    
     'AMAZON.YesIntent': function () {
         this.attributes['session'].action = 'CREATE_SEGMENT';
         this.attributes['session'].walkthru = this.t("SEGMENTATION_WALKTHRU");
@@ -322,6 +338,8 @@ const languageStrings = {
             "MAIN_MENU_REPROMPT": "Ask me a question, say features, say what's new, or just say help me. ",
             "HELP_MESSAGE_MAIN_MENU": "Ask me a question on what you need help with. Say features to hear a list of features.  Say what's new to hear a list of new features.  Say repeat to hear the commands again or you can say exit...Now, %s",
             "FEATURE_LIST": "I can help you with communications or lists. ",
+
+            "WINNER": "Team Illuminate Me of course!",
 
             "NEWFEATURES_MENU_PREFIX": "Looks like you are interested in hearing about new features.  Great! ",
             "NEWFEATURES_MENU": "I can tell you about lists, saving and printing dashboards, and blackbaud authentication.  Which feature are you interested in hearing about? ",
