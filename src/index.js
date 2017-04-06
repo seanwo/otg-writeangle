@@ -342,13 +342,13 @@ const languageStrings = {
             "WINNER": "Team Illuminate Me of course!",
 
             "NEWFEATURES_MENU_PREFIX": "OK! Let's learn about something new!",
-            "NEWFEATURES_MENU": "I can tell you about lists, saving and printing dashboards, and blackbaud authentication.  Which feature are you interested in hearing about? ",
+            "NEWFEATURES_MENU": "I can tell you about lists, dashboards, and blackbaud authentication.  Which feature are you interested in hearing about? ",
             "NEWFEATURES_MENU_REPROMPT": "Say the name of the feature you want to hear about, or say help me. ",
             "HELP_MESSAGE_NEWFEATURES_MENU": "Say lists if you want to hear about lists, say dashboards if you want to hear about dashboards, say authentication if you want to hear about authentication.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
-            "NEWFEATURE_LIST_EXPLAIN": "You're gonna love Lists! Check this out. Now you can apply filters to your constituents to focus on a specific audience.",
-            "NEWFEATURE_DASHBOARDS_EXPLAIN": "Dashboards are fantastic! They display data in really pretty graphs, so you can check the success of your programs and compare historical data and current data.",
-            "NEWFEATURE_AUTHENTICATION_EXPLAIN": "Get ready for the convenience! Now you can log into Luminate Beta using the same login you already use for Blackbaud Community and Blackbaud University.",
+            "NEWFEATURE_LIST_EXPLAIN": "You're gonna love Lists! Check this out. Now you can apply filters to your constituents to focus on a specific audience. ",
+            "NEWFEATURE_DASHBOARDS_EXPLAIN": "Dashboards are fantastic! They display data in really pretty graphs, so you can check the success of your programs and compare historical data and current data. ",
+            "NEWFEATURE_AUTHENTICATION_EXPLAIN": "Get ready for convenience! Now you can log into Luminate Beta using the same login you already use for Blackbaud Community and Blackbaud University. ",
 
             "COMMUNICATIONS_MENU_PREFIX": "Looks like you want to contact your constituents.  Let's get started. ",
             "COMMUNICATIONS_MENU": "You need to make a list of your constituents before you contact them.  Have you already created a group?",
