@@ -333,7 +333,7 @@ const languageStrings = {
             "NEWFEATURE_AUTHENTICATION_EXPLAIN": "This is the description of the new feature called blackbaud authentication. ",
 
             "COMMUNICATIONS_MENU_PREFIX": "Looks like you want to contact your constituents.  Let's get started. ",
-            "COMMUNICATIONS_MENU": "You need to make a list of your constituents before you contact them.  Have you already created a group of constituents to contact?",
+            "COMMUNICATIONS_MENU": "You need to make a list of your constituents before you contact them.  Have you already created a group?",
             "COMMUNICATIONS_MENU_REPROMPT": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents, or say help me. ",
             "HELP_MESSAGE_COMMUNICATIONS_MENU": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
