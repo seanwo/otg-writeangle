@@ -337,8 +337,8 @@ const languageStrings = {
             "COMMUNICATIONS_MENU_REPROMPT": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents, or say help me. ",
             "HELP_MESSAGE_COMMUNICATIONS_MENU": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
-            "SEGMENTATION_MENU_PREFIX": "Looks like you want to segment your constituents into a group.  Let's get started. ",
-            "SEGMENTATION_MENU": "To segment your constituents, you need to be logged into Luminate Beta.  Are you logged into Luminate Beta? ",
+            "SEGMENTATION_MENU_PREFIX": "Looks like you want to create a list of constituents.  Let's get started. ",
+            "SEGMENTATION_MENU": "To create your list you need to be logged into Luminate Beta.  Are you logged into Luminate Beta? ",
             "SEGMENTATION_MENU_REPROMPT": "Say yes if you are logged into Luminate Beta, say no if you are not yet logged into Luminate Beta, or say help me. ",
             "HELP_MESSAGE_SEGMENTATION_MENU": "Say yes if you are logged into Luminate Beta, say no if you are not yet logged into Luminate Beta.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
@@ -348,10 +348,10 @@ const languageStrings = {
                 "Choose lists from the main menu. ",
                 "Click on the plus sign to create a new list. ",
                 "Type a name and description for your list and then click save. ",
-                "Click the filters button that looks like a funnel and then choose email and social. ",
-                "Select the tags for the types of constituents you want in this segment. ",
+                "Click the filters button that looks like a funnel. ",
+                "Select the criteria for the types of constituents you want in this list. ",
                 "Click apply filters to apply the selections you've made. ",
-                "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the User Groups list within Groups in Luminate Online when the data transfers. "
+                "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the User Groups  within Groups in Luminate Online when the data transfers. "
             ],
 
             "CONTACT_GROUP": "Find the list in Luminate Online",
@@ -361,7 +361,7 @@ const languageStrings = {
                 "Choose constituent 360 from the main menu. ",
                 "Select groups. ",
                 "You should be on the User Group List tab. ",
-                "Find the list of segmented constituents by searching on the name of the list. ",
+                "Search for the name of the list you created in Luminate Beta. ",
                 "Click View Members to see the constituents in the group. "
             ],
 
