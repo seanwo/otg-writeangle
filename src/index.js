@@ -350,7 +350,7 @@ const languageStrings = {
                 "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the User Groups list within Groups in Luminate Online when the data transfers. "
             ],
 
-            "CONTACT_GROUP": "Contact a group of constituents",
+            "CONTACT_GROUP": "Find the list of constituents in groups in Luminate Online",
 
             "COMMUNICATIONS_WALKTHRU": [
                 "Log into Luminate Online.",
