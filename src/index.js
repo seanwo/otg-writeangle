@@ -299,7 +299,7 @@ const languageStrings = {
                 "Click on the plus sign to create a new list. ",
                 "Type a name and description for your list and then click save. ",
                 "Click the filters button that looks like a funnel. ",
-                "Select the criteria for the types of constituents you want in this list. ",
+                "Let's narrow down your list. In constituent basics, pick gender or donor status. In email and social, pick your preferences. In location, enter an address and a distance.",
                 "Click apply filters to apply the selections you've made. ",
                 "Click the Push to Luminate Online button to send your list to Luminate Online. Your list will display in the User Groups  within Groups in Luminate Online when the data transfers. "
             ],
