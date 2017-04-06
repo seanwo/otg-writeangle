@@ -9,6 +9,10 @@
             "slots": []
         },
         {
+            "intent": "FeatureIntent",
+            "slots": []
+        },
+        {
             "intent": "FeatureCommunicationsIntent",
             "slots": []
         },

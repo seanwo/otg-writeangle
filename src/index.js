@@ -48,7 +48,7 @@ var mainMenuHandlers = Alexa.CreateStateHandler(states.MAINMENU, {
         this.attributes["reprompt"] = repromptSpeech;
         this.emit(':ask', speechOutput, repromptSpeech);
     },
-    'ListIntent': function () {
+    'FeatureIntent': function () {
         var speechOutput = this.t("FEATURE_LIST") + this.t("MAIN_MENU");
         var repromptSpeech = this.t("MAIN_MENU_REPROMPT");
         this.emit(':ask', speechOutput, repromptSpeech);
@@ -60,6 +60,10 @@ var mainMenuHandlers = Alexa.CreateStateHandler(states.MAINMENU, {
     'FeatureCommunicationsIntent': function () {
         this.handler.state = states.COMMUNICATIONSMENU;
         this.emitWithState('CommunicationsMenu', this.t("COMMUNICATIONS_MENU_PREFIX"));
+    },
+    'ListIntent': function () {
+        this.handler.state = states.SEGMENTATIONMENU;
+        this.emitWithState('SegmentationMenu', this.t("SEGMENTATION_MENU_PREFIX"));
     },
     'FeatureSegmentationIntent': function () {
         this.handler.state = states.SEGMENTATIONMENU;
@@ -358,7 +362,7 @@ const languageStrings = {
                 "Select groups. ",
                 "You should be on the User Group List tab. ",
                 "Find the list of segmented constituents by searching on the name of the list. ",
-                "Click View Members to see the constituents in the group. ",
+                "Click View Members to see the constituents in the group. "
             ],
 
             "ACTION_WALKTHRU_MENU": "Let's walk through how to %s, say next after each step.  Let's begin. ",

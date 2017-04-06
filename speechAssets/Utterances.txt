@@ -1,23 +1,16 @@
-ListIntent list
+FeatureIntent features
+FeatureIntent what features
+FeatureIntent what features can you help me with
+FeatureIntent which features
+FeatureIntent which features can you help me with
 ListIntent lists
-ListIntent give me a list
-ListIntent features
-ListIntent list features
-ListIntent list the features
-ListIntent list your features
-ListIntent what features
-ListIntent what features can you help me with
-ListIntent which features
-ListIntent which features can you help me with
+ListIntent list
 FeatureCommunicationsIntent how do I contact my constituents
 FeatureCommunicationsIntent how do I contact my constituents in social media
 FeatureCommunicationsIntent how do I contact my supporters in social media
 FeatureCommunicationsIntent how do I find my constituents that are social media influencers
 FeatureCommunicationsIntent how do I find my social media influencers
 FeatureCommunicationsIntent communications
-FeatureCommunicationsIntent help with finding my list
-FeatureCommunicationsIntent help me with finding my list
-FeatureCommunicationsIntent i need help with finding my list
 FeatureCommunicationsIntent help with communications
 FeatureCommunicationsIntent help me with communications
 FeatureCommunicationsIntent i need help with communications
