@@ -350,12 +350,12 @@ const languageStrings = {
             "NEWFEATURE_DASHBOARDS_EXPLAIN": "Dashboards are fantastic! They display data in really pretty graphs, so you can check the success of your programs and compare historical data and current data. ",
             "NEWFEATURE_AUTHENTICATION_EXPLAIN": "Get ready for convenience! Now you can log into Luminate Beta using the same login you already use for Blackbaud Community and Blackbaud University. ",
 
-            "COMMUNICATIONS_MENU_PREFIX": "Looks like you want to contact your constituents.  Let's get started. ",
+            "COMMUNICATIONS_MENU_PREFIX": "Sounds like you want to contact your constituents.  Let's get started. ",
             "COMMUNICATIONS_MENU": "You need to make a list of your constituents before you contact them.  Have you already created a group?",
             "COMMUNICATIONS_MENU_REPROMPT": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents, or say help me. ",
             "HELP_MESSAGE_COMMUNICATIONS_MENU": "Say yes if you have already created a group of constituents, say no if you need to create a new group of constituents.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
 
-            "SEGMENTATION_MENU_PREFIX": "Looks like you want to create a list of constituents.  Let's get started. ",
+            "SEGMENTATION_MENU_PREFIX": "Sounds like you want to create a list of constituents.  Let's get started. ",
             "SEGMENTATION_MENU": "To create your list you need to be logged into Luminate Beta.  Are you logged into Luminate Beta? ",
             "SEGMENTATION_MENU_REPROMPT": "Say yes if you are logged into Luminate Beta, say no if you are not yet logged into Luminate Beta, or say help me. ",
             "HELP_MESSAGE_SEGMENTATION_MENU": "Say yes if you are logged into Luminate Beta, say no if you are not yet logged into Luminate Beta.  Say repeat to hear the commands again.  Say start over to choose a new feature or you can say exit...Now, %s",
